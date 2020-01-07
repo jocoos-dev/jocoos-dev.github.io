@@ -12,20 +12,20 @@
     <title>User :: FlipFlop SDK</title>
 
     
-    <link href="/jocoos-dev/jocoos-dev.github.io/css/nucleus.css?1578390216" rel="stylesheet">
-    <link href="/jocoos-dev/jocoos-dev.github.io/css/fontawesome-all.min.css?1578390216" rel="stylesheet">
-    <link href="/jocoos-dev/jocoos-dev.github.io/css/hybrid.css?1578390216" rel="stylesheet">
-    <link href="/jocoos-dev/jocoos-dev.github.io/css/featherlight.min.css?1578390216" rel="stylesheet">
-    <link href="/jocoos-dev/jocoos-dev.github.io/css/perfect-scrollbar.min.css?1578390216" rel="stylesheet">
-    <link href="/jocoos-dev/jocoos-dev.github.io/css/auto-complete.css?1578390216" rel="stylesheet">
-    <link href="/jocoos-dev/jocoos-dev.github.io/css/atom-one-dark-reasonable.css?1578390216" rel="stylesheet">
-    <link href="/jocoos-dev/jocoos-dev.github.io/css/theme.css?1578390216" rel="stylesheet">
-    <link href="/jocoos-dev/jocoos-dev.github.io/css/hugo-theme.css?1578390216" rel="stylesheet">
+    <link href="/jocoos-dev/jocoos-dev.github.io/css/nucleus.css?1578390740" rel="stylesheet">
+    <link href="/jocoos-dev/jocoos-dev.github.io/css/fontawesome-all.min.css?1578390740" rel="stylesheet">
+    <link href="/jocoos-dev/jocoos-dev.github.io/css/hybrid.css?1578390740" rel="stylesheet">
+    <link href="/jocoos-dev/jocoos-dev.github.io/css/featherlight.min.css?1578390740" rel="stylesheet">
+    <link href="/jocoos-dev/jocoos-dev.github.io/css/perfect-scrollbar.min.css?1578390740" rel="stylesheet">
+    <link href="/jocoos-dev/jocoos-dev.github.io/css/auto-complete.css?1578390740" rel="stylesheet">
+    <link href="/jocoos-dev/jocoos-dev.github.io/css/atom-one-dark-reasonable.css?1578390740" rel="stylesheet">
+    <link href="/jocoos-dev/jocoos-dev.github.io/css/theme.css?1578390740" rel="stylesheet">
+    <link href="/jocoos-dev/jocoos-dev.github.io/css/hugo-theme.css?1578390740" rel="stylesheet">
     
-      <link href="/jocoos-dev/jocoos-dev.github.io/css/theme-blue.css?1578390216" rel="stylesheet">
+      <link href="/jocoos-dev/jocoos-dev.github.io/css/theme-blue.css?1578390740" rel="stylesheet">
     
 
-    <script src="/jocoos-dev/jocoos-dev.github.io/js/jquery-3.3.1.min.js?1578390216"></script>
+    <script src="/jocoos-dev/jocoos-dev.github.io/js/jquery-3.3.1.min.js?1578390740"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -274,7 +274,11 @@
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#update-user-information">Update User information</a></li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -299,7 +303,35 @@
 
 
 
-	
+	<h2 id="update-user-information">Update User information</h2>
+<p>To update user information, call <code>updateUserInfo</code> of flipflop instance</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">sdk.updateUserInfo(userName: USER_NAME, avatarProfileURL: AVATAR_PROFILE_URL) { (result) <span style="color:#66d9ef">in</span>
+    <span style="color:#66d9ef">switch</span> result {
+    <span style="color:#66d9ef">case</span> .failure(<span style="color:#66d9ef">let</span> error):
+        <span style="color:#75715e">//</span><span style="color:#75715e"> </span><span style="color:#75715e">e</span><span style="color:#75715e">r</span><span style="color:#75715e">r</span><span style="color:#75715e">o</span><span style="color:#75715e">r</span><span style="color:#75715e"> </span><span style="color:#75715e">u</span><span style="color:#75715e">p</span><span style="color:#75715e">d</span><span style="color:#75715e">a</span><span style="color:#75715e">t</span><span style="color:#75715e">e</span>
+    <span style="color:#66d9ef">case</span> .success:
+        <span style="color:#75715e">//</span><span style="color:#75715e"> </span><span style="color:#75715e">s</span><span style="color:#75715e">u</span><span style="color:#75715e">c</span><span style="color:#75715e">c</span><span style="color:#75715e">e</span><span style="color:#75715e">s</span><span style="color:#75715e">s</span><span style="color:#75715e"> </span><span style="color:#75715e">n</span><span style="color:#75715e">o</span><span style="color:#75715e"> </span><span style="color:#75715e">r</span><span style="color:#75715e">e</span><span style="color:#75715e">s</span><span style="color:#75715e">u</span><span style="color:#75715e">l</span><span style="color:#75715e">t</span>
+    }
+}
+</code></pre></div><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>userName: String?</td>
+<td>User name</td>
+</tr>
+<tr>
+<td>avatarProfileURL: String?</td>
+<td>User Profile URL</td>
+</tr>
+</tbody>
+</table>
+
 
 
 
@@ -462,19 +494,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/jocoos-dev/jocoos-dev.github.io/js/clipboard.min.js?1578390216"></script>
-    <script src="/jocoos-dev/jocoos-dev.github.io/js/perfect-scrollbar.min.js?1578390216"></script>
-    <script src="/jocoos-dev/jocoos-dev.github.io/js/perfect-scrollbar.jquery.min.js?1578390216"></script>
-    <script src="/jocoos-dev/jocoos-dev.github.io/js/jquery.sticky.js?1578390216"></script>
-    <script src="/jocoos-dev/jocoos-dev.github.io/js/featherlight.min.js?1578390216"></script>
-    <script src="/jocoos-dev/jocoos-dev.github.io/js/highlight.pack.js?1578390216"></script>
+    <script src="/jocoos-dev/jocoos-dev.github.io/js/clipboard.min.js?1578390740"></script>
+    <script src="/jocoos-dev/jocoos-dev.github.io/js/perfect-scrollbar.min.js?1578390740"></script>
+    <script src="/jocoos-dev/jocoos-dev.github.io/js/perfect-scrollbar.jquery.min.js?1578390740"></script>
+    <script src="/jocoos-dev/jocoos-dev.github.io/js/jquery.sticky.js?1578390740"></script>
+    <script src="/jocoos-dev/jocoos-dev.github.io/js/featherlight.min.js?1578390740"></script>
+    <script src="/jocoos-dev/jocoos-dev.github.io/js/highlight.pack.js?1578390740"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/jocoos-dev/jocoos-dev.github.io/js/modernizr.custom-3.6.0.js?1578390216"></script>
-    <script src="/jocoos-dev/jocoos-dev.github.io/js/learn.js?1578390216"></script>
-    <script src="/jocoos-dev/jocoos-dev.github.io/js/hugo-learn.js?1578390216"></script>
+    <script src="/jocoos-dev/jocoos-dev.github.io/js/modernizr.custom-3.6.0.js?1578390740"></script>
+    <script src="/jocoos-dev/jocoos-dev.github.io/js/learn.js?1578390740"></script>
+    <script src="/jocoos-dev/jocoos-dev.github.io/js/hugo-learn.js?1578390740"></script>
 
-    <link href="/jocoos-dev/jocoos-dev.github.io/mermaid/mermaid.css?1578390216" rel="stylesheet" />
-    <script src="/jocoos-dev/jocoos-dev.github.io/mermaid/mermaid.js?1578390216"></script>
+    <link href="/jocoos-dev/jocoos-dev.github.io/mermaid/mermaid.css?1578390740" rel="stylesheet" />
+    <script src="/jocoos-dev/jocoos-dev.github.io/mermaid/mermaid.js?1578390740"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

@@ -12,20 +12,20 @@
     <title>Video :: FlipFlop SDK</title>
 
     
-    <link href="/jocoos-dev/jocoos-dev.github.io/css/nucleus.css?1578390216" rel="stylesheet">
-    <link href="/jocoos-dev/jocoos-dev.github.io/css/fontawesome-all.min.css?1578390216" rel="stylesheet">
-    <link href="/jocoos-dev/jocoos-dev.github.io/css/hybrid.css?1578390216" rel="stylesheet">
-    <link href="/jocoos-dev/jocoos-dev.github.io/css/featherlight.min.css?1578390216" rel="stylesheet">
-    <link href="/jocoos-dev/jocoos-dev.github.io/css/perfect-scrollbar.min.css?1578390216" rel="stylesheet">
-    <link href="/jocoos-dev/jocoos-dev.github.io/css/auto-complete.css?1578390216" rel="stylesheet">
-    <link href="/jocoos-dev/jocoos-dev.github.io/css/atom-one-dark-reasonable.css?1578390216" rel="stylesheet">
-    <link href="/jocoos-dev/jocoos-dev.github.io/css/theme.css?1578390216" rel="stylesheet">
-    <link href="/jocoos-dev/jocoos-dev.github.io/css/hugo-theme.css?1578390216" rel="stylesheet">
+    <link href="/jocoos-dev/jocoos-dev.github.io/css/nucleus.css?1578390740" rel="stylesheet">
+    <link href="/jocoos-dev/jocoos-dev.github.io/css/fontawesome-all.min.css?1578390740" rel="stylesheet">
+    <link href="/jocoos-dev/jocoos-dev.github.io/css/hybrid.css?1578390740" rel="stylesheet">
+    <link href="/jocoos-dev/jocoos-dev.github.io/css/featherlight.min.css?1578390740" rel="stylesheet">
+    <link href="/jocoos-dev/jocoos-dev.github.io/css/perfect-scrollbar.min.css?1578390740" rel="stylesheet">
+    <link href="/jocoos-dev/jocoos-dev.github.io/css/auto-complete.css?1578390740" rel="stylesheet">
+    <link href="/jocoos-dev/jocoos-dev.github.io/css/atom-one-dark-reasonable.css?1578390740" rel="stylesheet">
+    <link href="/jocoos-dev/jocoos-dev.github.io/css/theme.css?1578390740" rel="stylesheet">
+    <link href="/jocoos-dev/jocoos-dev.github.io/css/hugo-theme.css?1578390740" rel="stylesheet">
     
-      <link href="/jocoos-dev/jocoos-dev.github.io/css/theme-blue.css?1578390216" rel="stylesheet">
+      <link href="/jocoos-dev/jocoos-dev.github.io/css/theme-blue.css?1578390740" rel="stylesheet">
     
 
-    <script src="/jocoos-dev/jocoos-dev.github.io/js/jquery-3.3.1.min.js?1578390216"></script>
+    <script src="/jocoos-dev/jocoos-dev.github.io/js/jquery-3.3.1.min.js?1578390740"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -274,7 +274,15 @@
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#get-video-list">Get Video List</a></li>
+    <li><a href="#update-video">Update Video</a></li>
+    <li><a href="#delete-video">Delete Video</a></li>
+    <li><a href="#upload-video">Upload Video</a></li>
+    <li><a href="#upload-video-thumbnail">Upload Video Thumbnail</a></li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -299,7 +307,133 @@
 
 
 
-	
+	<h2 id="get-video-list">Get Video List</h2>
+<p>To get video list,</p>
+<ol>
+<li>Get FFVideoListLoader instance from flipflop instance</li>
+<li>Call <code>next</code> api</li>
+<li>if you want more vidoes, just call <code>next</code> api. If there are no more videos, it will return an empty value.</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">let</span> videoListLoader = sdk.getVideoListLoader()
+videoListLoader?.next { (videoResult) <span style="color:#66d9ef">in</span>
+    <span style="color:#66d9ef">switch</span> videoResult {
+    <span style="color:#66d9ef">case</span> .failure(<span style="color:#66d9ef">let</span> error):
+        <span style="color:#75715e">//</span><span style="color:#75715e"> </span><span style="color:#75715e">e</span><span style="color:#75715e">r</span><span style="color:#75715e">r</span><span style="color:#75715e">o</span><span style="color:#75715e">r</span>
+    <span style="color:#66d9ef">case</span> .success(<span style="color:#66d9ef">let</span> videos):
+        <span style="color:#75715e">//</span><span style="color:#75715e"> </span><span style="color:#75715e">g</span><span style="color:#75715e">e</span><span style="color:#75715e">t</span><span style="color:#75715e"> </span><span style="color:#75715e">v</span><span style="color:#75715e">i</span><span style="color:#75715e">d</span><span style="color:#75715e">e</span><span style="color:#75715e">o</span><span style="color:#75715e">s</span>
+    }
+}
+</code></pre></div><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cursor: String</td>
+<td>Start cursor position</td>
+</tr>
+<tr>
+<td>count: Int?</td>
+<td>Number of query. default: 20 maximum: 100</td>
+</tr>
+<tr>
+<td>userID: String?</td>
+<td>Video Owner ID. default: All user</td>
+</tr>
+<tr>
+<td>type: String?</td>
+<td>Video Type. only available <strong>BROADCASTED</strong> or <strong>UPLOADED</strong>. default: All video</td>
+</tr>
+<tr>
+<td>state: String?</td>
+<td>Video State. only available <strong>LIVE</strong> or <strong>VOD</strong>. default: All</td>
+</tr>
+</tbody>
+</table>
+<h2 id="update-video">Update Video</h2>
+<p>To update video, call <code>updateVideo</code> api of flipflop instance</p>
+
+<div class="notices note" ><p>Only the owner can update the video.</p>
+</div>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">sdk.editVideo(videoKey: VIDEO_KEY, title: TITLE, content: CONTENT, visibility: VISIBILITY thumbnail_url: THUMBNAIL_URL, data: DATA) { (result) <span style="color:#66d9ef">in</span>
+    <span style="color:#66d9ef">switch</span> result {
+    <span style="color:#66d9ef">case</span> .failure(<span style="color:#66d9ef">let</span> error):
+        <span style="color:#75715e">//</span><span style="color:#75715e"> </span><span style="color:#75715e">e</span><span style="color:#75715e">r</span><span style="color:#75715e">r</span><span style="color:#75715e">o</span><span style="color:#75715e">r</span>
+    <span style="color:#66d9ef">case</span> .success:
+        <span style="color:#75715e">//</span><span style="color:#75715e"> </span><span style="color:#75715e">s</span><span style="color:#75715e">u</span><span style="color:#75715e">c</span><span style="color:#75715e">c</span><span style="color:#75715e">e</span><span style="color:#75715e">s</span><span style="color:#75715e">s</span>
+        
+    }
+}
+</code></pre></div><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>videoKey: String</td>
+<td>Video Key</td>
+</tr>
+<tr>
+<td>title: String</td>
+<td>Video Title</td>
+</tr>
+<tr>
+<td>content: String?</td>
+<td>Video Description</td>
+</tr>
+<tr>
+<td>visibility: String?</td>
+<td>Video public scope. only available <strong>&ldquo;PUBLIC&rdquo;</strong> or <strong>&ldquo;PRIVATE&rdquo;</strong></td>
+</tr>
+<tr>
+<td>thumbnail_url: String?</td>
+<td>Video thumbnail url</td>
+</tr>
+<tr>
+<td>data: String?</td>
+<td>Video custom data</td>
+</tr>
+</tbody>
+</table>
+<h2 id="delete-video">Delete Video</h2>
+<p>To delete video, call <code>deleteVideo</code> api of flipflop instance</p>
+
+<div class="notices note" ><p>Only the owner can delete the video.</p>
+</div>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">sdk.deleteVideo(videoKey: VIDEO_KEY) { (result) <span style="color:#66d9ef">in</span>
+    <span style="color:#66d9ef">switch</span> result {
+    <span style="color:#66d9ef">case</span> .failure(<span style="color:#66d9ef">let</span> error):
+        <span style="color:#75715e">//</span><span style="color:#75715e"> </span><span style="color:#75715e">e</span><span style="color:#75715e">r</span><span style="color:#75715e">r</span><span style="color:#75715e">o</span><span style="color:#75715e">r</span>
+    <span style="color:#66d9ef">case</span> .success:
+        <span style="color:#75715e">//</span><span style="color:#75715e"> </span><span style="color:#75715e">s</span><span style="color:#75715e">u</span><span style="color:#75715e">c</span><span style="color:#75715e">c</span><span style="color:#75715e">e</span><span style="color:#75715e">s</span><span style="color:#75715e">s</span>
+        
+    }
+}
+</code></pre></div><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>videoKey: String</td>
+<td>Video Key</td>
+</tr>
+</tbody>
+</table>
+<h2 id="upload-video">Upload Video</h2>
+<h2 id="upload-video-thumbnail">Upload Video Thumbnail</h2>
+
 
 
 
@@ -462,19 +596,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/jocoos-dev/jocoos-dev.github.io/js/clipboard.min.js?1578390216"></script>
-    <script src="/jocoos-dev/jocoos-dev.github.io/js/perfect-scrollbar.min.js?1578390216"></script>
-    <script src="/jocoos-dev/jocoos-dev.github.io/js/perfect-scrollbar.jquery.min.js?1578390216"></script>
-    <script src="/jocoos-dev/jocoos-dev.github.io/js/jquery.sticky.js?1578390216"></script>
-    <script src="/jocoos-dev/jocoos-dev.github.io/js/featherlight.min.js?1578390216"></script>
-    <script src="/jocoos-dev/jocoos-dev.github.io/js/highlight.pack.js?1578390216"></script>
+    <script src="/jocoos-dev/jocoos-dev.github.io/js/clipboard.min.js?1578390740"></script>
+    <script src="/jocoos-dev/jocoos-dev.github.io/js/perfect-scrollbar.min.js?1578390740"></script>
+    <script src="/jocoos-dev/jocoos-dev.github.io/js/perfect-scrollbar.jquery.min.js?1578390740"></script>
+    <script src="/jocoos-dev/jocoos-dev.github.io/js/jquery.sticky.js?1578390740"></script>
+    <script src="/jocoos-dev/jocoos-dev.github.io/js/featherlight.min.js?1578390740"></script>
+    <script src="/jocoos-dev/jocoos-dev.github.io/js/highlight.pack.js?1578390740"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/jocoos-dev/jocoos-dev.github.io/js/modernizr.custom-3.6.0.js?1578390216"></script>
-    <script src="/jocoos-dev/jocoos-dev.github.io/js/learn.js?1578390216"></script>
-    <script src="/jocoos-dev/jocoos-dev.github.io/js/hugo-learn.js?1578390216"></script>
+    <script src="/jocoos-dev/jocoos-dev.github.io/js/modernizr.custom-3.6.0.js?1578390740"></script>
+    <script src="/jocoos-dev/jocoos-dev.github.io/js/learn.js?1578390740"></script>
+    <script src="/jocoos-dev/jocoos-dev.github.io/js/hugo-learn.js?1578390740"></script>
 
-    <link href="/jocoos-dev/jocoos-dev.github.io/mermaid/mermaid.css?1578390216" rel="stylesheet" />
-    <script src="/jocoos-dev/jocoos-dev.github.io/mermaid/mermaid.js?1578390216"></script>
+    <link href="/jocoos-dev/jocoos-dev.github.io/mermaid/mermaid.css?1578390740" rel="stylesheet" />
+    <script src="/jocoos-dev/jocoos-dev.github.io/mermaid/mermaid.js?1578390740"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

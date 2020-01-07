@@ -4,7 +4,7 @@
 	"title": "Authentication",
 	"tags": [],
 	"description": "",
-	"content": ""
+	"content": "Initialize with AppKey and AppSecret  You must initialize a FlipFlop instance before using sdk. call initialize api in didFinishLaunchingWithOptions of AppDelegate.swift  You can get APP_KEY and APP_SECRET from FlipFlop Dashboard\n func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -\u0026gt; Bool { //Overridepointforcustomizationafterapplicationlaunch. FlipFlop.initialize(appKey: APP_KEY, appSecret: APP_SECRET) return true }    Parameter Description     appKey: String Application Key   appSecret: String Application Secret    Uninitialize  You must uinitialize a FlipFlop instance before app terminate call uninitialize api in applicationWillTerminate of AppDelegate.swift  func applicationWillTerminate(_ application: UIApplication) { //Calledwhentheapplicationisabouttoterminate.Savedataifappropriate.SeealsoapplicationDidEnterBackground:. FlipFlop.uninitialize() } Authorize To get Flipflop instance, you must call authentication\nuserID must be unique\n FlipFlop.authentication(userID: USER_ID, userName: USER_NAME, avatarProfileURL: AVATAR_PROFILE_URL) { (result) in switch result { case .failure(let error): //error case .success(let sdk): //successresultisflipflopinstance } }    Parameter Description     userID: String User ID   userName: String User name   avatarProfileURL: String User Profile URL    "
 },
 {
 	"uri": "https://github.com/jocoos-dev/jocoos-dev.github.io/ios/",
@@ -18,7 +18,7 @@
 	"title": "User",
 	"tags": [],
 	"description": "",
-	"content": ""
+	"content": "Update User information To update user information, call updateUserInfo of flipflop instance\nsdk.updateUserInfo(userName: USER_NAME, avatarProfileURL: AVATAR_PROFILE_URL) { (result) in switch result { case .failure(let error): //errorupdate case .success: //successnoresult } }    Parameter Description     userName: String? User name   avatarProfileURL: String? User Profile URL    "
 },
 {
 	"uri": "https://github.com/jocoos-dev/jocoos-dev.github.io/android/",
@@ -32,7 +32,7 @@
 	"title": "Video",
 	"tags": [],
 	"description": "",
-	"content": ""
+	"content": "Get Video List To get video list,\n Get FFVideoListLoader instance from flipflop instance Call next api if you want more vidoes, just call next api. If there are no more videos, it will return an empty value.  let videoListLoader = sdk.getVideoListLoader() videoListLoader?.next { (videoResult) in switch videoResult { case .failure(let error): //error case .success(let videos): //getvideos } }    Parameter Description     cursor: String Start cursor position   count: Int? Number of query. default: 20 maximum: 100   userID: String? Video Owner ID. default: All user   type: String? Video Type. only available BROADCASTED or UPLOADED. default: All video   state: String? Video State. only available LIVE or VOD. default: All    Update Video To update video, call updateVideo api of flipflop instance\nOnly the owner can update the video.\n sdk.editVideo(videoKey: VIDEO_KEY, title: TITLE, content: CONTENT, visibility: VISIBILITY thumbnail_url: THUMBNAIL_URL, data: DATA) { (result) in switch result { case .failure(let error): //error case .success: //success } }    Parameter Description     videoKey: String Video Key   title: String Video Title   content: String? Video Description   visibility: String? Video public scope. only available \u0026ldquo;PUBLIC\u0026rdquo; or \u0026ldquo;PRIVATE\u0026rdquo;   thumbnail_url: String? Video thumbnail url   data: String? Video custom data    Delete Video To delete video, call deleteVideo api of flipflop instance\nOnly the owner can delete the video.\n sdk.deleteVideo(videoKey: VIDEO_KEY) { (result) in switch result { case .failure(let error): //error case .success: //success } }    Parameter Description     videoKey: String Video Key    Upload Video Upload Video Thumbnail "
 },
 {
 	"uri": "https://github.com/jocoos-dev/jocoos-dev.github.io/error/",
