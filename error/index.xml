@@ -2,13 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Error on FlipFlop SDK</title>
-    <link>https://jocoos-dev.github.io/error/</link>
+    <link>https://flipflopsdk.github.io/error/</link>
     <description>Recent content in Error on FlipFlop SDK</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <lastBuildDate>Mon, 06 Jan 2020 15:14:53 +0900</lastBuildDate>
     
-	<atom:link href="https://jocoos-dev.github.io/error/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://flipflopsdk.github.io/error/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>

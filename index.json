@@ -1,62 +1,62 @@
 [
 {
-	"uri": "https://jocoos-dev.github.io/ios/authentication/",
+	"uri": "https://flipflopsdk.github.io/ios/authentication/",
 	"title": "Authentication",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "https://jocoos-dev.github.io/ios/",
+	"uri": "https://flipflopsdk.github.io/ios/",
 	"title": "IOS",
 	"tags": [],
 	"description": "",
 	"content": "API Documentation Learn how to integrate Flipflop API\n"
 },
 {
-	"uri": "https://jocoos-dev.github.io/ios/user/",
+	"uri": "https://flipflopsdk.github.io/ios/user/",
 	"title": "User",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "https://jocoos-dev.github.io/android/",
+	"uri": "https://flipflopsdk.github.io/android/",
 	"title": "Android",
 	"tags": [],
 	"description": "",
 	"content": "Chapter Android Coming soon\u0026hellip; "
 },
 {
-	"uri": "https://jocoos-dev.github.io/ios/video/",
+	"uri": "https://flipflopsdk.github.io/ios/video/",
 	"title": "Video",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "https://jocoos-dev.github.io/error/",
+	"uri": "https://flipflopsdk.github.io/error/",
 	"title": "Error",
 	"tags": [],
 	"description": "",
 	"content": "   Code Message     40000 Invalid user_id - valid value of user_id is range 1 to 80   40001 Invalid video_key -valid value of video_key is range 4 to 100   40002 Invalid type - valid value of type is either BROADCASTED or UPLOADED   40003 Invalid user_name - max size of user_name is range 80   40004 Invalid user_avatar_url - max size of user_avatar_url is 200   40005 Invalid title - valid value of title is range 1 to 100   40006 Invalid content - valid value of content is range 1 to 4000   40007 Invalid visibility - valid value of visibility is either PUBLIC or PRIVATE   40009 Invalid data - valid value of data is range 1 to 2000   40011 Invalid state - valid value of state is either LIVE or VOD   40012 Invalid cursor.   40013 Invalid count - check the limitation of count   40014 Invalid like - valid value of like is true   40015 Invalid keyword - valid value of keyword is range 1 to 200   40016 Invalid sort - valid value of sort is either asc or desc   40017 Invalid reason - valid value of reason is range 1 to 400   40018 Invalid video_key - Already exist   40019 Invalid video_key format - video_key should contain only alphanumeric without space   40020 Required request body is missing   40400 Not found - specified video_key is not exist   40401 Invalid state - the state of specified video_key is not valid   40402 Not permitted - the user_id does not have permission   40403 Already liked   40404 Invalid visibility - specified video_key is private    "
 },
 {
-	"uri": "https://jocoos-dev.github.io/categories/",
+	"uri": "https://flipflopsdk.github.io/categories/",
 	"title": "Categories",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "https://jocoos-dev.github.io/",
+	"uri": "https://flipflopsdk.github.io/",
 	"title": "Learn API for FlipFlop SDK",
 	"tags": [],
 	"description": "",
 	"content": "FlipFlop SDK Overview FlipFlop is Live Commerce SDK\nEasily integrate live broadcasts with chat and products on your platform.\nMain features  Video Management Live Streaming Live Player VOD Player Chat  "
 },
 {
-	"uri": "https://jocoos-dev.github.io/tags/",
+	"uri": "https://flipflopsdk.github.io/tags/",
 	"title": "Tags",
 	"tags": [],
 	"description": "",
