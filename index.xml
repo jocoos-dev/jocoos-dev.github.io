@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Learn API for FlipFlop SDK on FlipFlop SDK</title>
-    <link>/</link>
+    <link>https://jocoos-dev.github.io/</link>
     <description>Recent content in Learn API for FlipFlop SDK on FlipFlop SDK</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     
-	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jocoos-dev.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>
